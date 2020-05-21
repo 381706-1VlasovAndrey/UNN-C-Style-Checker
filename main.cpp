@@ -18,10 +18,10 @@ using namespace clang::tooling;
 
 class CastCallBack : public MatchFinder::MatchCallback {
 public:
-	CastCallBack(Rewriter& rewriter) : rewriter_(rewriter) {
+    CastCallBack(Rewriter& rewriter) : rewriter_(rewriter) {
     };
 
-	virtual void run(const MatchFinder::MatchResult& Result) {
+    virtual void run(const MatchFinder::MatchResult& Result) {
 	  const auto *CastExpr = Result.Nodes.getNodeAs<CStyleCastExpr>("cast");
 	  auto &SM = *Result.SourceManager;
 
